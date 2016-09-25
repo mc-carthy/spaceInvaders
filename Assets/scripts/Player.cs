@@ -8,7 +8,7 @@ public class Player : MonoBehaviour {
 	public onHitEnemyAction onHitEnemy;
 	public onKillEnemyAction onKillEnemy;
 
-	private float xClamp = 5.5f;
+	private float xClamp = 8;
 	private float speed = 6;
 	private float shootCooldown = 0.5f;
 
@@ -33,7 +33,7 @@ public class Player : MonoBehaviour {
 		float xMove = Input.GetAxisRaw ("Horizontal");
 		Vector2 temp = transform.position;
 		temp.x += xMove * speed * Time.deltaTime;
-		temp.x = Mathf.Clamp (transform.position.x, -xClamp, xClamp);
+		temp.x = Mathf.Clamp (temp.x, -xClamp, xClamp);
 		transform.position = temp;
 
 		if (Input.GetKeyDown (KeyCode.Space)) {
@@ -50,7 +50,7 @@ public class Player : MonoBehaviour {
 			transform.position,
 			Quaternion.identity
 		) as Bullet;
-		newBullet.transform.SetParent (transform);
+		//newBullet.transform.SetParent (transform);
 		newBullet.GetComponent<Bullet> ().onKillEnemy = () => {
 			if (this.onKillEnemy != null) {
 				this.onKillEnemy ();

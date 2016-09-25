@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour {
 	private bool gameover;
 
 	private void Start () {
-		Time.timeScale = 1;
+		//Time.timeScale = 1;
 
 		player.onHitEnemy += OnGameOver;
 		player.onKillEnemy += OnKillEnemy;
@@ -54,6 +54,6 @@ public class GameManager : MonoBehaviour {
 			gameoverText.text = "You Win!\nScore: " + score + "\nPress R to Restart";
 		}
 
-		Time.timeScale = 0;
+		//Time.timeScale = 0;
 	}
 }

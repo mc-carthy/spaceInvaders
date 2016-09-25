@@ -5,7 +5,7 @@ public class EnemyGroup : MonoBehaviour {
 
 	private float xSpeed = 0.25f, ySpeed = 0.25f;
 	private float maxInterval = 0.3f, minInterval = 0.025f;
-	private float xClamp = 5.5f;
+	private float xClamp = 8f;
 
 	private Enemy[] enemies;
 	private float moveTimer;
