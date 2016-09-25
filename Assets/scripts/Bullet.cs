@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour {
 	}
 
 	private void OnTriggerEnter2D (Collider2D trig) {
-		if (trig.gameObject.GetComponent<Enemy> () != null) {
+		if (trig.tag == "enemy") {
 			_onKillEnemy ();
 			Destroy (trig.gameObject);
 			Destroy (gameObject);
